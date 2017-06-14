@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cotxox</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/login.css}" rel="stylesheet" />
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+    
+
+  </head>
+
+  <body>
+
+    <div class="container" style="margin-left: 45px;">
+    
+   <div style="margin-top:200px;width:250px;text-align:center; font-size:20px;">
+
+      <form class="form-signin"  th:action="@{/logincheck}"  method="POST">
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <h2 class="form-signin-heading text-muted" style="margin-bottom:20px;" >Iniciar sesión</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text"  class="form-control" placeholder="Username" name="nombre" id="nombre"/>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password"  class="form-control" placeholder="Password" name="contraseña" id="contraseña"/>
+        <div th:if="${error != null}" class="alert alert-danger" role="alert">Invalido nombre o dni</div>
+        <div th:if="${logout != null}" class="alert alert-info" role="alert">Registrado correctamente</div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+        	<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Sign in
+        </button>
+      </form>
+	</div>
+    </div> <!-- /container -->
+
+</body>
+</html>

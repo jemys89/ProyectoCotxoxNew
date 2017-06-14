@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Conductor Asignado</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+
+<link href="#"
+	th:href="@{https://code.getmdl.io/1.3.0/material.indigo-pink.min.css}"
+	rel="stylesheet" />
+<link href="#"
+	th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}"
+	rel="stylesheet" />
+<script type="text/javascript"
+	src="https://code.getmdl.io/1.3.0/material.min.js"
+	th:src="@{https://code.getmdl.io/1.3.0/material.min.js}"></script>
+
+</head>
+<body>
+	<img class="img-responsive" src="../static/imgs/maps.png"
+		th:src="@{/imgs/conductor3.jpg}" />
+
+	<h4 class="display-3 w-100 p-3 text-center" style="background:#3f51b5;color:#fff">
+		Espero que haya tenido un grato trayecto</h4>
+	<h4 class="display-4 text-center">Valore su experiencia con</h4>
+
+ <a href="#" class="list-group-item list-group-item-action text-center" th:text="${conductor.nombre}" style="background:#3f51b5;color:#fff">Cras justo odio</a>
+  <h5 class="text-center">Valoracion Media</h5><a href="#" class="list-group-item list-group-item-action text-center" th:text="${conductor.valoracion}" style="background:#3f51b5;color:#fff">Cras justo odio</a>
+
+	<form action="#">
+		<div
+			class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin-left:55px;margin-top:20px;margin-bottom:10px;">
+			<input class="mdl-textfield__input" type="number"
+				pattern="-?[0-9]*(\.[0-9]+)?"  id="sample4"></input> <label
+				class="mdl-textfield__label" for="sample4">Valoracion...</label> <span
+				class="mdl-textfield__error">Input is not a number!</span>
+				
+			<!-- th:field="*{conductor.valoracion}" th:value="${conductor.valoracion}" -->	
+				
+		</div>
+	</form>
+	<a href="#" th:href="@{/conductor/propina?id=__${conductor.id}__}">
+	<div class="text-center">
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored " style="margin-bottom:10px;">
+  Valorar
+</button>
+</div></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

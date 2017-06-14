@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Conductor Asignado</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="text-center">
+		<figure>
+			<img class="img-responsive rounded-circle"
+				src="../static/imgs/mercedesConductor.jpg" th:src="@{/imgs/mercedesConductor.jpg}" />
+		</figure>
+	</div>
+
+
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action text-center" th:text="${conductor.nombre}" style="background:#3f51b5;color:#fff">Cras justo odio</a>
+  <a href="#" class="list-group-item list-group-item-action text-center"  th:text="${conductor.matricula}" style="background:#6b8bec;color:#fff">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action text-center" th:text="${conductor.modelo}" style="background:#3f51b5;color:#fff">Morbi leo risus</a>
+</div>
+	<div class="text-center">
+	<img class="img-responsive" src="../static/imgs/mercedes.jpg"     style="margin-left: 60px;margin-top:50px;"
+		th:src="@{/imgs/stars.png}" />
+	</div>
+
+
+<div class="card card-inverse card-success text-center" >
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <p>Conductor disponible a sus servicios</p>
+      <footer th:text="${conductor.valoracionmedia}">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+    </blockquote>
+  </div>
+</div>
+
+
+
+
+	
+
+	<a href="#" th:href="@{/conductor/valoracion?id=__${conductor.id}__}">
+		<button type="button" class="btn btn-lg btn-primary btn-block">
+			<span class="glyphicon glyphicon-info" aria-hidden="true" >Aceptar
+				Carrera</span>
+		</button>
+	</a>
+</body>
+</html>

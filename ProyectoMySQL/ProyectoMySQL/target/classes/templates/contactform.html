@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Contxox añadir Carrera</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1,maximum-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+
+<link href="#"
+	th:href="@{https://code.getmdl.io/1.3.0/material.indigo-pink.min.css}"
+	rel="stylesheet" />
+<link href="#"
+	th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}"
+	rel="stylesheet" />
+<script type="text/javascript"
+	src="https://code.getmdl.io/1.3.0/material.min.js"
+	th:src="@{https://code.getmdl.io/1.3.0/material.min.js}"></script>
+
+</head>
+<body>
+
+
+	<img class="img-responsive" src="../static/imgs/maps.png"
+		th:src="@{/imgs/maps.png}" />
+
+	<div class="jumbotron">
+		<div class="container">
+			<h4 class="text-center" style="background:#337ab7;color:#fff">Introduce los datos de tu carrera</h4>
+			<br />
+			<form action="#" th:action="@{/contacts/añadircliente}"
+				th:object="${clienteModel}" method="post" >
+				<input type="hidden" th:field="*{id}"></input> Origen: <input
+					type="text" class="form-control" th:field="*{origen}"
+					th:value="${origen}"></input> <br /> Destino: <input type="text"
+					class="form-control" th:field="*{destino}" th:value="${destino}"></input>
+				<br /> Distancia: <input type="number" class="form-control"
+					th:field="*{distancia}" th:value="${distancia}"></input> <br />
+				Tiempo: <input type="number" class="form-control"
+					th:field="*{tiempo}" th:value="${tiempo}"></input> <br />
+
+
+			
+
+
+
+				<br />
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					Accept
+				</button>
+
+			</form>
+			<a href="#" th:href="@{/contacts/cancel}">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					Cancelar
+				</button>
+			</a>
+
+		</div>
+	</div>
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cotxox Carrera</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!-- Custom styles for this template -->
+    <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />
+    
+ 	<link href="#" th:href="@{/css/contacts.css}" rel="stylesheet" />
+ 	
+  </head>
+
+  <body>
+	
+	<div class="container">
+	
+		<h1 class="text-center text-muted">Hola, <span th:text="${username}"></span> </h1>
+		<br/>
+		<div class="panel panel-default table-responsive">
+			<div class="panel-heading"></div>
+		
+			<table class="table ">
+				<thead class="text-muted" style="background:#337ab7;color:#fff">
+					<tr>
+						<th >Origen</th>
+						<th>Destino</th>
+						<th>Distancia</th>
+						<th>Tiempo</th>
+						<th>Precio</th>
+						<th>Actions</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cliente : ${clientes}">
+						<td th:text="${cliente.origen}"></td>
+						<td th:text="${cliente.destino}"></td>
+						<td th:text="${cliente.distancia}"></td>
+						<td th:text="${cliente.tiempo}"></td>
+						<td th:text="${cliente.total} + '€'"> <p>€</p></td>
+						
+						<td>
+						<a href="#" th:href="@{/contacts/contactform?id=__${cliente.id}__}">
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+						</a>
+						<a href="#" th:href="@{/contacts/eliminarcliente?id=__${cliente.id}__}">
+							<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+						</a>
+					
+						</td>
+					</tr>
+					
+				
+				</tbody>
+			</table>
+		</div>
+		
+		<!--  <div th:if="${result = 1}" class="alert alert-success" role="alert">Carrera Añadida</div>
+		<div th:if="${result = 0}" class="alert alert-danger" role="alert">Error al añadir Carrera</div>-->
+		
+		<a href="#" th:href="@{contactform?id=0}">
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Añade Carrera</button>
+		
+		</a>
+			<a href="#" th:href="@{/conductor/libre}">
+							<button type="button" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-info" aria-hidden="true">Solicitar Conductor</span></button>
+						</a>
+		<!--  <form th:action="@{/logout}" method="POST">
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Busca un Conductor</button>
+		</form>-->
+	</div>
+
+
+</body>
+</html>

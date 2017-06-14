@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+<table>
+	<thead>
+		<tr>
+			<th>Nombre
+			
+			</th>
+			
+			<th>Matricula
+			
+			</th>
+			
+			<th>Modelo
+			
+			</th>
+			<th>Valoracion
+			
+			</th>
+			<th>Ocupado
+			
+			</th>
+			
+		
+		</tr>
+	</thead>
+	<tbody>
+	<tr th:each="conducto : ${conductores}">
+			<th><span th:text="${conducto.nombre}">Nombre</span></th>
+			<th><span th:text="${conducto.matricula}">Matricula</span></th>
+			<th><span th:text="${conducto.modelo}">Modelo</span></th>
+			<th><span th:number="${conducto.valoracionmedia}">Valoracion</span></th>
+			<th><span th:text="${conducto.ocupado}">Ocupado</span></th>
+			
+			
+			
+			
+		
+		</tr>
+	</tbody>
+</table>
+<form action="#" th:action="@{/conductor/añadir}" th:object="${conductor}" method="post">
+<p>  Nombre: <input type="text" th:field="*{nombre}"/></p>
+<p>  Matricula: <input type="text" th:field="*{matricula}"/></p>
+<p>  Modelo: <input type="text" th:field="*{modelo}"/></p>
+<p>  Valoracion: <input type="number" th:field="*{valoracion}"/></p>
+<p>  Ocupado: <input type="text" th:field="*{ocupado}"/></p>
+
+<p>  <input type="submit" value="Submit"/></p>
+
+</form>
+
+</body>
+</html>
